@@ -35,7 +35,7 @@ export const optsRepentAndBless = (isFirstLine, isJapanese) => ({
   x: 0.2,
   y: isFirstLine ? '76%' : '89%',
   w: '95%',
-  fontSize: 40,
+  fontSize: isJapanese ? 33 : 40,
   fontFace: isJapanese ? FONT_FACE_JP : FONT_FACE_KR,
   color: isJapanese ? COLOR.ORANGE : COLOR.BLACK,
   align: 'center',
