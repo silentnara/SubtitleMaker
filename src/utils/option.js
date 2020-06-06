@@ -19,28 +19,28 @@ import {
   BLESS,
 } from '../constants/constants';
 
-export const optsSong = (isFirstLine, isJapanese, isReading = false) => ({
+export const optsSong = (isFirstLine, isJapanese, needReading = false) => ({
   x: 0.2,
-  y: isReading ? '70%' : isFirstLine ? '80%' : '90%',
+  y: needReading ? '70%' : isFirstLine ? '80%' : '90%',
   w: '95%',
-  fontSize: 44,
+  fontSize: needReading ? 30 : isJapanese ? 36 : 40,
   fontFace: isJapanese ? FONT_FACE_JP : FONT_FACE_KR,
-  fill: '000000',
-  color: 'ffffff',
+  fill: COLOR.BLACK,
+  color: COLOR.WHITE,
   align: 'center',
   lang: isJapanese ? 'ja-JP' : 'ko-KR',
 });
 
 export const optsRepentAndBless = (isFirstLine, isJapanese) => ({
   x: 0.2,
-  y: isFirstLine ? '76%' : '89%',
+  y: isFirstLine ? '78%' : '90%',
   w: '95%',
   fontSize: isJapanese ? 33 : 40,
   fontFace: isJapanese ? FONT_FACE_JP : FONT_FACE_KR,
-  color: isJapanese ? COLOR.ORANGE : COLOR.BLACK,
+  color: COLOR.WHITE,
   align: 'center',
   lang: isJapanese ? 'ja-JP' : 'ko-KR',
-})
+});
 
 export const optsContent = (y, isFirstJP = false, isJapanese = false) => ({
   x: 0.4,
@@ -88,9 +88,10 @@ export const mentionProps = isTwoCell => ({
   y: 4.2,
   w: 9,
   h: 1.2,
-  color: '215968',
+  color: COLOR.BLUE,
   fontSize: 27,
   align: 'center',
+  border: { type: 'none' },
   ...(isTwoCell && {
     colW: [3, 5],
   }),

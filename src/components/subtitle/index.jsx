@@ -1,4 +1,4 @@
-import useSWR from 'swr';
+// import useSWR from 'swr';
 import { Container, Button, Form, Navbar, Toast } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { messageContent } from '../../constants/constants';
@@ -18,9 +18,8 @@ const Subtitle = () => {
     [dispatch],
   );
 
-  const fetcher = (...args) => fetch(...args).then(res => res.text());
-  const { data } = useSWR('http://ibibles.net/quote.php?kor-mat/5:3-12', fetcher);
-  console.log(data);
+  // const fetcher = (...args) => fetch(...args).then(res => res.text());
+  // const { data } = useSWR('http://ibibles.net/quote.php?kor-mat/5:3-12', fetcher);
 
   return (
     <>

@@ -136,6 +136,7 @@ export const COLOR = {
   WHITE: 'ffffff',
   RED: 'ff0000',
   ORANGE: 'e46c0a',
+  BLUE: '215968',
 };
 
 export const CONTENT_POSITION_Y = {

@@ -45,7 +45,6 @@ import { optsSong, optsContent, mentionProps, optsInfo, optsRepentAndBless } fro
 import ImageInfo from '../../assets/info.png';
 import ContentInfo from '../../assets/content.jpeg';
 import MentionInfo from '../../assets/mention.png';
-import Blueband from '../../assets/Picture3.png';
 
 export const sanitizer = bible => {
   sanitize(bible);
@@ -199,14 +198,16 @@ const addSubtitle = (pptx, subtitles) => {
 
       case SONG_THREE_LINE:
         rowCount = text.split('\n').length;
-        quotient = rowCount / 2;
+        quotient = rowCount / 3;
         for (let j = 0; j < quotient; j++) {
+          console.log(123, text)
           const charSplit1 = text.split('\n')[j * 3];
           const charSplit2 = text.split('\n')[j * 3 + 1] || '';
           const charSplit3 = text.split('\n')[j * 3 + 2] || '';
-          slide.addText(charSplit1, optsSong(true, isJapanese(charSplit1.substring(0, 1))), true);
+          slide = pptx.addSlide();
+          slide.addText(charSplit1, optsSong(false, isJapanese(charSplit1.substring(0, 1)), true));
           slide.addText(charSplit2, optsSong(true, isJapanese(charSplit1.substring(0, 1))));
-          slide.addText(charSplit3, optsSong(true, isJapanese(charSplit1.substring(0, 1))));
+          slide.addText(charSplit3, optsSong(false, isJapanese(charSplit1.substring(0, 1))));
           slide.bkgd = COLOR.BLACK;
         }
         addEmptySlide(pptx);
@@ -216,7 +217,6 @@ const addSubtitle = (pptx, subtitles) => {
         FORGIVE_KR.map((item, index) => {
           slide = pptx.addSlide();
           slide.bkgd = COLOR.BLACK;
-          slide.addImage(mentionImgProps(Blueband));
           slide.addText(item, optsRepentAndBless(true, false));
           slide.addText(FORGIVE_JP[index], optsRepentAndBless(false, true));
         });
@@ -227,7 +227,6 @@ const addSubtitle = (pptx, subtitles) => {
         BLESS_KR.map((item, index) => {
           slide = pptx.addSlide();
           slide.bkgd = COLOR.BLACK;
-          slide.addImage(mentionImgProps(Blueband));
           slide.addText(item, optsRepentAndBless(true, false));
           slide.addText(BLESS_JP[index], optsRepentAndBless(false, true));
         });
