@@ -141,9 +141,9 @@ export const COLOR = {
 
 export const CONTENT_POSITION_Y = {
   KR_TITLE: 0.4,
-  KR_CONTENT: 1,
-  JP_TITLE: 2.6,
-  JP_CONTENT: 3.2,
+  KR_CONTENT: 1.1,
+  JP_TITLE: 2.65,
+  JP_CONTENT: 3.25,
 };
 
 export const INFO_POSITION_Y = {
