@@ -160,3 +160,6 @@ export const NONE_OPTION = [SONG_TWO_LINE, SONG_THREE_LINE];
 
 export const FONT_FACE_JP = 'Meiryo';
 export const FONT_FACE_KR = 'Nanum Gothic';
+
+export const FONT_FACE_JP_HEAD = 'HGP創英角ｺﾞｼｯｸUB';
+export const FONT_FACE_KR_HEAD = 'KS Headline R';
